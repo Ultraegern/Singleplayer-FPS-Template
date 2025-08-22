@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsstdchjyfh2k"]
+
+[ext_resource type="PackedScene" uid="uid://1fieap14h2xv" path="res://Assets/3D/Source/Box.glb" id="1_5fox0"]
+[ext_resource type="Material" uid="uid://d0kn7dk4r56b4" path="res://Assets/Materials/default.tres" id="2_swwgb"]
+[ext_resource type="PackedScene" uid="uid://cm8xqttttn4nv" path="res://Assets/3D/Source/Stair.glb" id="3_adyyf"]
+
+[node name="MeshLibrary" type="Node3D"]
+
+[node name="Box" parent="." instance=ExtResource("1_5fox0")]
+
+[node name="Cube" parent="Box" index="0"]
+surface_material_override/0 = ExtResource("2_swwgb")
+
+[node name="Stair" parent="." instance=ExtResource("3_adyyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Stair" parent="Stair" index="0"]
+surface_material_override/0 = ExtResource("2_swwgb")
+
+[editable path="Box"]
+[editable path="Stair"]
