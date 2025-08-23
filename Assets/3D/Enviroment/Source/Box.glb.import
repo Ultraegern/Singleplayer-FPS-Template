@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cm8xqttttn4nv"
-path="res://.godot/imported/Stair.glb-0f724a5b93314b35bbf3f2cdcb015d2f.scn"
+uid="uid://1fieap14h2xv"
+path="res://.godot/imported/Box.glb-c3d0b67f61c1678df32afdf32b76d470.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Source/Stair.glb"
-dest_files=["res://.godot/imported/Stair.glb-0f724a5b93314b35bbf3f2cdcb015d2f.scn"]
+source_file="res://Assets/3D/Enviroment/Source/Box.glb"
+dest_files=["res://.godot/imported/Box.glb-c3d0b67f61c1678df32afdf32b76d470.scn"]
 
 [params]
 
