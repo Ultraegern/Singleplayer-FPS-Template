@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2q73d61dwr6t"]
+[gd_scene load_steps=8 format=3 uid="uid://b2q73d61dwr6t"]
 
 [ext_resource type="Script" uid="uid://dkhpra2rh5hj4" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://cmep3tm30y3q1" path="res://Assets/3D/Weapons/pistol.tscn" id="2_6t5aa"]
@@ -9,6 +9,15 @@ radius = 0.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 radius = 0.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_6t5aa"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqql"]
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.0
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_v0iea")
@@ -30,3 +39,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="GunRayCast3D" type="RayCast3D" parent="Neck"]
 target_position = Vector3(0, 0, -50)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72414, -0.28914, -1.54855)
+gi_mode = 2
+mesh = SubResource("SphereMesh_6t5aa")
+surface_material_override/0 = SubResource("StandardMaterial3D_vgqql")
