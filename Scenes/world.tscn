@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://df54f4era4tto"]
+[gd_scene load_steps=22 format=4 uid="uid://df54f4era4tto"]
 
 [ext_resource type="MeshLibrary" uid="uid://dobfq68o1i1rq" path="res://Assets/3D/Enviroment/default.meshlib" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://b2q73d61dwr6t" path="res://Scenes/player.tscn" id="2_go701"]
 [ext_resource type="Material" uid="uid://d0kn7dk4r56b4" path="res://Assets/Materials/default.tres" id="3_8j60k"]
 [ext_resource type="LightmapGIData" uid="uid://dcuryoupp8sn1" path="res://Scenes/world.lmbake" id="4_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://cmep3tm30y3q1" path="res://Assets/3D/Weapons/pistol.tscn" id="5_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://dygo7n0hg5axb" path="res://Assets/3D/Enemys/enemy_1.tscn" id="6_5ukr8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a02cp"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -98,9 +100,19 @@ shadow_mesh = SubResource("ArrayMesh_15xso")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06y3"]
 albedo_color = Color(1, 0, 1, 1)
+emission = Color(1, 0, 1, 1)
+emission_energy_multiplier = 2.08
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uqbj3"]
 data = PackedVector3Array(1, 0, 1, -1, 2, 1, 1, 2, 1, 1, 0, 1, -1, 0, 1, -1, 2, 1, -1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, -1, 2, 1, 1, 0, -1, 1, 2, 1, -1, 2, 1, -1, 0, -1, 1, 0, -1, 1, 2, 1, -1, 2, 1, -1, 2, 1, 1, 2, 1, 1, 2, 1, -1, 2, 1, -1, 0, 1, -1, 2, 1, -1, 2, 1, -1, 0, -1, -1, 0, 1, -1, 0, -1, -1, 0, 1, -1, 0, -1, -1, 2, 1, -1, 0, -1, 1, 0, -1, -1, 0, -1, -1, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, -1, 1, 0, -1, 1, 2, 1, 1, 0, 1, 1, 2, 1, 1, 0, -1, 1, 0, 1, 1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ukr8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7acu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v1tr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fj1v"]
 
 [node name="World" type="Node3D"]
 
@@ -108,7 +120,7 @@ data = PackedVector3Array(1, 0, 1, -1, 2, 1, 1, 2, 1, 1, 0, 1, -1, 0, 1, -1, 2, 
 environment = SubResource("Environment_5a7ea")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-visible = false
+supersampling = true
 generate_probes_subdiv = 3
 light_data = ExtResource("4_fo5ed")
 
@@ -117,7 +129,10 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11726, -2.76684, -1.2957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11726, -4.83576, -7.01463)
+light_energy = 5.885
+light_bake_mode = 1
+shadow_enabled = true
 omni_range = 6.871
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -146,3 +161,31 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o06y3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stair2/Colider"]
 shape = SubResource("ConcavePolygonShape3D_uqbj3")
+
+[node name="Pistol" parent="." instance=ExtResource("5_fo5ed")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.74904, -5.32054, -2.73853)
+
+[node name="blasterB" parent="Pistol/blasterB2/tmpParent" index="0"]
+transform = Transform3D(0.604801, 0.703928, -0.372426, -0.5994, 0.710271, 0.369099, 0.524343, 6.15393e-08, 0.851507, 0.377451, 0.555612, -1.09806)
+surface_material_override/0 = SubResource("StandardMaterial3D_5ukr8")
+surface_material_override/1 = SubResource("StandardMaterial3D_k7acu")
+surface_material_override/2 = SubResource("StandardMaterial3D_5v1tr")
+surface_material_override/3 = SubResource("StandardMaterial3D_0fj1v")
+
+[node name="Enemy1" parent="." instance=ExtResource("6_5ukr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.57509, 0, 2.88567)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_5ukr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1445, 2.38419e-07, -1.53975)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_5ukr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2987, -9.53674e-07, 8.16316)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_5ukr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20276, 0, 10.0246)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_5ukr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02814, 0, 6.13976)
+
+[editable path="Pistol"]
+[editable path="Pistol/blasterB2"]

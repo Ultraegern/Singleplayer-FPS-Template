@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://t1v4a3txpvkp"]
+
+[ext_resource type="Script" uid="uid://b04n5hqrsu1dm" path="res://Scripts/rilfle.gd" id="1_fmrqv"]
+[ext_resource type="Texture2D" uid="uid://8sr277q40fm2" path="res://Assets/Icons/Guns/blasterD.png" id="2_fmrqv"]
+[ext_resource type="PackedScene" uid="uid://ciwojegvjofe2" path="res://Assets/3D/Weapons/Source/blasterD.glb" id="3_nmum6"]
+
+[node name="Rilfle" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_fmrqv")
+damage = 10.0
+fire_rate = 4.0
+fire_mode = 1
+icon = ExtResource("2_fmrqv")
+metadata/_custom_type_script = "uid://cpf0x535ttldm"
+
+[node name="blasterD2" parent="." instance=ExtResource("3_nmum6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.15, 0.46)

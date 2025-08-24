@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmep3tm30y3q1"]
+
+[ext_resource type="Script" uid="uid://c423sfn6anllt" path="res://Scripts/pistol.gd" id="1_yb7k7"]
+[ext_resource type="PackedScene" uid="uid://bwbgby5wr32sp" path="res://Assets/3D/Weapons/Source/blasterB.glb" id="2_jh2dr"]
+[ext_resource type="Texture2D" uid="uid://y5hmc7l63fts" path="res://Assets/Icons/Guns/blasterB.png" id="2_w27hs"]
+
+[node name="Pistol" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_yb7k7")
+damage = 20.0
+fire_rate = 2.0
+fire_mode = 0
+icon = ExtResource("2_w27hs")
+metadata/_custom_type_script = "uid://cpf0x535ttldm"
+
+[node name="blasterB2" parent="." instance=ExtResource("2_jh2dr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195, -0.12, 0.536)

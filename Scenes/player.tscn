@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2q73d61dwr6t"]
+[gd_scene load_steps=6 format=3 uid="uid://b2q73d61dwr6t"]
 
 [ext_resource type="Script" uid="uid://dkhpra2rh5hj4" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://cmep3tm30y3q1" path="res://Assets/3D/Weapons/pistol.tscn" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://t1v4a3txpvkp" path="res://Assets/3D/Weapons/rilfle.tscn" id="3_vgqql"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v0iea"]
 radius = 0.4
@@ -10,6 +12,7 @@ radius = 0.4
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_v0iea")
+gun_scenes = Array[PackedScene]([ExtResource("2_6t5aa"), ExtResource("3_vgqql")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -24,3 +27,6 @@ shape = SubResource("CapsuleShape3D_f60y1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="GunRayCast3D" type="RayCast3D" parent="Neck"]
+target_position = Vector3(0, 0, -50)

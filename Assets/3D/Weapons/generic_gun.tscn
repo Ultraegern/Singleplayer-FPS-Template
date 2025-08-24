@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dddb0vvtolhq3"]
+
+[ext_resource type="Script" uid="uid://cpf0x535ttldm" path="res://Scripts/generic_gun.gd" id="1_wmwo8"]
+
+[node name="GenericGun" type="Node3D"]
+script = ExtResource("1_wmwo8")
