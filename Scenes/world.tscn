@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00183344, -0.0140452, 15.0
 
 [node name="Enemy1" parent="." instance=ExtResource("6_5ukr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76599, 0, 8.7902)
-patrol_points = Array[Vector3]([Vector3(0, 0, 0), Vector3(2.47, 0, 0), Vector3(2.78, 0, 5.885)])
+patrol_points = Array[Vector3]([Vector3(0.723638, 4.26442, -14.6699), Vector3(10.6697, 4.26442, 4.77812), Vector3(-13.0296, 2.25217, 8.94068), Vector3(-4.94537, 2.25217, 20.911), Vector3(1.01618, -5.62393, -6.78751)])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0669507, 2.7132, 0)
@@ -103,3 +103,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5ukr8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 mesh = SubResource("SphereMesh_8j60k")
 surface_material_override/0 = SubResource("StandardMaterial3D_k7acu")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01618, -5.62393, -6.78751)

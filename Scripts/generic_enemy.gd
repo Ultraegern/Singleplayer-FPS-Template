@@ -85,8 +85,6 @@ func _physics_process(delta: float) -> void:
 		var dir = velocity.normalized()
 		var target_yaw = atan2(-dir.x, -dir.z)
 		rotation.y = lerp_angle(rotation.y, target_yaw, delta * 5.0)
-
-	
 	
 	move_and_slide()
 
