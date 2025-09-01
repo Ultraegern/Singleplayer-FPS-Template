@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Enemy
 
+@export var pathfinding: bool = true
 @export var max_health: float = 100
 var health: float
 
