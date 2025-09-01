@@ -11,7 +11,6 @@ radius = 0.4
 radius = 0.4
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00119066, -0.00280631, 0.0145242)
 floor_max_angle = 0.872665
 script = ExtResource("1_v0iea")
 gun_scenes = Array[PackedScene]([ExtResource("2_6t5aa"), ExtResource("3_vgqql")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dygo7n0hg5axb"]
+[gd_scene load_steps=6 format=3 uid="uid://dygo7n0hg5axb"]
 
 [ext_resource type="Script" uid="uid://bi1lestrqwe84" path="res://Scripts/enemy_1.gd" id="1_gftxx"]
 
@@ -6,7 +6,14 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gftxx"]
 
-[node name="Enemy1" type="CharacterBody3D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3uhr2"]
+radius = 0.1
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uetds"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Enemy1" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_gftxx")
 metadata/_custom_type_script = "uid://dh4sq4u1kvwnh"
 
@@ -17,3 +24,13 @@ shape = SubResource("CapsuleShape3D_gftxx")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_gftxx")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+debug_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.53536, -0.622483)
+mesh = SubResource("CapsuleMesh_3uhr2")
+surface_material_override/0 = SubResource("StandardMaterial3D_uetds")

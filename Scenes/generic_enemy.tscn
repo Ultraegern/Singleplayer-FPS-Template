@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dh4sq4u1kvwnh" path="res://Scripts/generic_enemy.gd" id="1_t6chu"]
 
-[node name="Generic Enemy" type="CharacterBody3D"]
+[node name="Generic Enemy" type="CharacterBody3D" groups=["enemy"]]
 floor_max_angle = 0.872665
 script = ExtResource("1_t6chu")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+debug_enabled = true

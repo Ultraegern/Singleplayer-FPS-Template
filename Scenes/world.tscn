@@ -71,19 +71,8 @@ omni_range = 6.871
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00183344, -0.0140452, 15.0075)
 
 [node name="Enemy1" parent="." instance=ExtResource("6_5ukr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.57509, 0, 2.88567)
-
-[node name="Enemy2" parent="." instance=ExtResource("6_5ukr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1445, 2.38419e-07, -1.53975)
-
-[node name="Enemy3" parent="." instance=ExtResource("6_5ukr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2987, -9.53674e-07, 8.16316)
-
-[node name="Enemy4" parent="." instance=ExtResource("6_5ukr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20276, 0, 10.0246)
-
-[node name="Enemy5" parent="." instance=ExtResource("6_5ukr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02814, 0, 6.13976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76599, 0, 8.7902)
+patrol_points = Array[Vector3]([Vector3(0, 0, 0), Vector3(2.47, 0, 0), Vector3(2.78, 0, 5.885)])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0669507, 2.7132, 0)

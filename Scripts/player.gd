@@ -89,3 +89,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, speed)
 	
 	move_and_slide()
+	
+	for node in get_tree().get_nodes_in_group("enemy"):
+		if node is Enemy:
+			node.update_player_position(global_position)
