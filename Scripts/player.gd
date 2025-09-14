@@ -9,6 +9,7 @@ class_name Player
 @export var jump_velocity: float = 4.5
 @export var sensitivity: float = 0.005
 @export var gun_scenes: Array[PackedScene]
+@export var spawn_point: Vector3
 
 var guns: Array[Gun] = []
 var gun_timers: Array[Timer] = []
@@ -70,8 +71,13 @@ func _process(_delta: float) -> void:
 		curently_selected_gun = (curently_selected_gun - 1 + guns.size()) % guns.size()
 		switch_gun()
 
+func kill():
+	global_position = spawn_point
 
 func _physics_process(delta: float) -> void:
+	if global_position.y <= -20:
+		kill()
+	
 	#Movement
 	if not is_on_floor():
 		velocity += get_gravity() * delta

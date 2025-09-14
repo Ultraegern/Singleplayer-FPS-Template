@@ -68,7 +68,8 @@ shadow_enabled = true
 omni_range = 6.871
 
 [node name="Player" parent="." instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00183344, -0.0140452, 15.0075)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+spawn_point = Vector3(0, 0, 15)
 
 [node name="Enemy1" parent="." instance=ExtResource("6_5ukr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76599, 0, 8.7902)
